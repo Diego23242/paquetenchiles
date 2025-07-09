@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParaQueTeEnchiles - Sabritas y Duritos Preparados</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Lobster&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Estilos personalizados y fuentes */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-lobster {
+            font-family: 'Lobster', cursive;
+        }
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(255, 99, 71, 0.8), rgba(255, 215, 0, 0.8)), url('https://placehold.co/1920x1080/f7fafc/e2e8f0?text=Fondo+de+Antojitos');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-pulse {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(239, 68, 68, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-20 top-0">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="font-lobster text-3xl text-red-600">ParaQueTeEnchiles</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-600 hover:text-red-500 transition duration-300">Inicio</a>
+                <a href="#menu" class="text-gray-600 hover:text-red-500 transition duration-300">Menú</a>
+                <a href="#nosotros" class="text-gray-600 hover:text-red-500 transition duration-300">Nosotros</a>
+                <a href="#contacto" class="text-gray-600 hover:text-red-500 transition duration-300">Contacto</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white">
+            <a href="#inicio" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Inicio</a>
+            <a href="#menu" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Menú</a>
+            <a href="#nosotros" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Nosotros</a>
+            <a href="#contacto" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Contacto</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg pt-32 pb-20 text-white text-center">
+        <div class="container mx-auto px-6">
+            <div data-aos="fade-down">
+                <h1 class="font-lobster text-5xl md:text-7xl lg:text-8xl drop-shadow-lg">ParaQueTeEnchiles</h1>
+                <p class="mt-4 text-xl md:text-2xl font-semibold drop-shadow-md">El sabor que pica... ¡y te encanta!</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <p class="mt-8 max-w-2xl mx-auto text-lg">Preparamos los antojitos más deliciosos con ingredientes frescos y el toque picosito perfecto. ¡Ven a probarlos!</p>
+                <a href="#menu" class="mt-10 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 transform hover:scale-105 btn-pulse">
+                    ¡Ver el Menú!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-red-600 font-lobster">Nuestro Menú</h2>
+                <p class="text-lg text-gray-600 mt-2">¡Pura sabrosura preparada al momento!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Producto 1: Dorilocos -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up">
+                    <img src="https://placehold.co/600x400/FF6347/FFFFFF?text=Dorilocos" alt="Imagen de Dorilocos" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-2xl text-yellow-500">Dorilocos</h3>
+                        <p class="mt-2 text-gray-600">La combinación explosiva de Doritos Nacho, jícama, pepino, cueritos, cacahuates, mucho limón, salsa y chamoy. ¡Un clásico que no falla!</p>
+                    </div>
+                </div>
+
+                <!-- Producto 2: Tostilocos -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://placehold.co/600x400/22C55E/FFFFFF?text=Tostilocos" alt="Imagen de Tostilocos" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-2xl text-green-600">Tostilocos</h3>
+                        <p class="mt-2 text-gray-600">Tus Tostitos favoritos con elote, queso, crema, y un toque de chile en polvo. ¡Cremosos, crujientes y deliciosos!</p>
+                    </div>
+                </div>
+
+                <!-- Producto 3: Duritos Preparados -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://placehold.co/600x400/F97316/FFFFFF?text=Duritos+Preparados" alt="Imagen de Duritos Preparados" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-2xl text-orange-500">Duritos con Todo</h3>
+                        <p class="mt-2 text-gray-600">Crujientes duritos de harina con col, jitomate, cueritos, aguacate, crema y tu salsa picante preferida. ¡La botana perfecta!</p>
+                    </div>
+                </div>
+
+                <!-- Producto 4: Sabritas Preparadas -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://placehold.co/600x400/EF4444/FFFFFF?text=Sabritas+Preparadas" alt="Imagen de Sabritas Preparadas" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-2xl text-red-500">Sabritas a tu Gusto</h3>
+                        <p class="mt-2 text-gray-600">Elige tus papitas favoritas (Cheetos, Fritos, etc.) y las preparamos con limón, salsas, chamoy y todos los toppings que se te antojen.</p>
+                    </div>
+                </div>
+                
+                <!-- Producto 5: Gomitas Enchiladas -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://placehold.co/600x400/EC4899/FFFFFF?text=Gomitas+Enchiladas" alt="Imagen de Gomitas Enchiladas" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-2xl text-pink-500">Gomitas Enchiladas</h3>
+                        <p class="mt-2 text-gray-600">Una dulce y picosita mezcla de tus gomitas favoritas cubiertas en nuestro chamoy especial y chile en polvo. ¡Adictivas!</p>
+                    </div>
+                </div>
+
+                <!-- Producto 6: Fruta con Chile -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Fruta+con+Chile" alt="Imagen de Fruta con Chile" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-2xl text-purple-500">Fruta Fresca</h3>
+                        <p class="mt-2 text-gray-600">La opción refrescante. Mango, jícama, pepino y sandía de temporada con limón, sal y mucho chile del que pica (o del que no pica).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="nosotros" class="bg-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/2" data-aos="fade-right">
+                <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Nuestro+Equipo" alt="Imagen del equipo de ParaQueTeEnchiles" class="rounded-xl shadow-xl w-full">
+            </div>
+            <div class="md:w-1/2" data-aos="fade-left">
+                <h2 class="text-4xl md:text-5xl font-bold text-blue-600 font-lobster">Nuestra Pasión</h2>
+                <p class="mt-4 text-lg text-gray-700">En <span class="font-lobster text-xl">ParaQueTeEnchiles</span>, amamos lo que hacemos. Nacimos del antojo y del gusto por compartir sabores auténticos que alegran el día. Usamos solo los ingredientes más frescos y preparamos todo con la higiene y el cariño que te mereces.</p>
+                <p class="mt-4 text-gray-600">Nuestra misión es simple: ¡convertir tu antojo en una experiencia inolvidable y deliciosamente picosita!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-5xl font-bold font-lobster text-yellow-400">¡Haz tu Pedido!</h2>
+            <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Encuéntranos en nuestra sucursal o síguenos en redes sociales para no perderte ninguna de nuestras creaciones.</p>
+            
+            <div class="mt-10">
+                <p class="text-xl font-bold">Dirección:</p>
+                <p class="text-lg text-gray-300">Calle del Antojo #123, Colonia Sabrosa, Tu Ciudad</p>
+                
+                <p class="text-xl font-bold mt-6">Teléfono / WhatsApp:</p>
+                <p class="text-lg text-gray-300">55 1234 5678</p>
+
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="#" class="text-yellow-400 hover:text-white transition duration-300">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="#" class="text-yellow-400 hover:text-white transition duration-300">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85C2.25 3.854 3.734 2.31 6.981 2.163 8.246 2.105 8.623 2.093 12 2.093m0-2.163C8.618 0 8.227.012 7.053.072 2.695.272.273 2.69.073 7.052.012 8.227 0 8.618 0 12s.012 3.773.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.228 23.988 8.618 24 12 24s3.773-.012 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.06-1.174.072-1.565.072-4.947s-.012-3.773-.072-4.947c-.196-4.354-2.62-6.78-6.979-6.98C15.773.012 15.382 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" /></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 ParaQueTeEnchiles. Todos los derechos reservados.</p>
+            <p class="text-sm mt-1">Diseño con ❤️ por un antojado.</p>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800, // Duración de la animación
+            once: true, // La animación ocurre solo una vez
+        });
+
+        // Lógica para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
