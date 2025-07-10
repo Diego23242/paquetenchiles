@@ -17,30 +17,41 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* Estilos personalizados y fuentes */
+        /* Estilos globales */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         html {
             scroll-behavior: smooth;
-            /* Le dice al navegador que tenga en cuenta la altura del header al navegar a un ancla */
-            scroll-padding-top: 70px; 
+            scroll-padding-top: 70px;
+            overflow-x: hidden; /* 👈 evita scroll horizontal */
         }
+
         body {
             font-family: 'Poppins', sans-serif;
+            overflow-x: hidden; /* 👈 evita scroll horizontal */
         }
+
         .font-lobster {
             font-family: 'Lobster', cursive;
         }
+
         .hero-bg {
             background-image: linear-gradient(to right, rgba(255, 99, 71, 0.8), rgba(255, 215, 0, 0.8)), url('img/fondo.jpeg');
             background-size: cover;
             background-position: center;
         }
+
         .card-hover:hover {
             transform: translateY(-10px) scale(1.03);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+
         .btn-pulse {
             animation: pulse-animation 2s infinite;
         }
+
         @keyframes pulse-animation {
             0% {
                 box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
@@ -52,11 +63,12 @@
                 box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
             }
         }
+
         .offer-badge {
             position: absolute;
             top: -15px;
             right: -15px;
-            background-color: #ef4444; /* red-500 */
+            background-color: #ef4444;
             color: white;
             padding: 8px 12px;
             border-radius: 9999px;
