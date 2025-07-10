@@ -18,6 +18,11 @@
 
     <style>
         /* Estilos personalizados y fuentes */
+        html {
+            scroll-behavior: smooth;
+            /* Le dice al navegador que tenga en cuenta la altura del header al navegar a un ancla */
+            scroll-padding-top: 70px; 
+        }
         body {
             font-family: 'Poppins', sans-serif;
         }
@@ -25,7 +30,7 @@
             font-family: 'Lobster', cursive;
         }
         .hero-bg {
-            background-image: linear-gradient(to right, rgba(255, 99, 71, 0.8), rgba(255, 215, 0, 0.8)), url('https://placehold.co/1920x1080/f7fafc/e2e8f0?text=Fondo+de+Antojitos');
+            background-image: linear-gradient(to right, rgba(255, 99, 71, 0.8), rgba(255, 215, 0, 0.8)), url('img/fondo.jpeg');
             background-size: cover;
             background-position: center;
         }
@@ -47,6 +52,18 @@
                 box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
             }
         }
+        .offer-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: #ef4444; /* red-500 */
+            color: white;
+            padding: 8px 12px;
+            border-radius: 9999px;
+            font-weight: bold;
+            transform: rotate(15deg);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -54,10 +71,11 @@
     <!-- Header -->
     <header class="bg-white shadow-md fixed w-full z-20 top-0">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="font-lobster text-3xl text-red-600">ParaQueTeEnchiles</a>
+            <a href="#inicio" class="font-lobster text-3xl text-red-600">ParaQueTeEnchiles</a>
             <div class="hidden md:flex space-x-8">
                 <a href="#inicio" class="text-gray-600 hover:text-red-500 transition duration-300">Inicio</a>
                 <a href="#menu" class="text-gray-600 hover:text-red-500 transition duration-300">Menú</a>
+                <a href="#ofertas" class="text-gray-600 hover:text-red-500 transition duration-300">Ofertas</a>
                 <a href="#nosotros" class="text-gray-600 hover:text-red-500 transition duration-300">Nosotros</a>
                 <a href="#contacto" class="text-gray-600 hover:text-red-500 transition duration-300">Contacto</a>
             </div>
@@ -71,6 +89,7 @@
         <div id="mobile-menu" class="md:hidden hidden bg-white">
             <a href="#inicio" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Inicio</a>
             <a href="#menu" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Menú</a>
+            <a href="#ofertas" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Ofertas</a>
             <a href="#nosotros" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Nosotros</a>
             <a href="#contacto" class="block py-2 px-4 text-sm text-gray-600 hover:bg-red-50">Contacto</a>
         </div>
@@ -101,57 +120,50 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Producto 1: Dorilocos -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up">
-                    <img src="https://placehold.co/600x400/FF6347/FFFFFF?text=Dorilocos" alt="Imagen de Dorilocos" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-2xl text-yellow-500">Dorilocos</h3>
-                        <p class="mt-2 text-gray-600">La combinación explosiva de Doritos Nacho, jícama, pepino, cueritos, cacahuates, mucho limón, salsa y chamoy. ¡Un clásico que no falla!</p>
-                    </div>
-                </div>
+                <!-- Productos del menú -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up"><img src="https://placehold.co/600x400/FF6347/FFFFFF?text=Dorilocos" alt="Imagen de Dorilocos" class="w-full h-56 object-cover"><div class="p-6"><h3 class="font-bold text-2xl text-yellow-500">Dorilocos</h3><p class="mt-2 text-gray-600">La combinación explosiva de Doritos Nacho, jícama, pepino, cueritos, cacahuates, mucho limón, salsa y chamoy. ¡Un clásico que no falla!</p></div></div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100"><img src="https://placehold.co/600x400/22C55E/FFFFFF?text=Tostilocos" alt="Imagen de Tostilocos" class="w-full h-56 object-cover"><div class="p-6"><h3 class="font-bold text-2xl text-green-600">Tostilocos</h3><p class="mt-2 text-gray-600">Tus Tostitos favoritos con elote, queso, crema, y un toque de chile en polvo. ¡Cremosos, crujientes y deliciosos!</p></div></div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200"><img src="https://placehold.co/600x400/F97316/FFFFFF?text=Duritos+Preparados" alt="Imagen de Duritos Preparados" class="w-full h-56 object-cover"><div class="p-6"><h3 class="font-bold text-2xl text-orange-500">Duritos con Todo</h3><p class="mt-2 text-gray-600">Crujientes duritos de harina con col, jitomate, cueritos, aguacate, crema y tu salsa picante preferida. ¡La botana perfecta!</p></div></div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300"><img src="https://placehold.co/600x400/EF4444/FFFFFF?text=Sabritas+Preparadas" alt="Imagen de Sabritas Preparadas" class="w-full h-56 object-cover"><div class="p-6"><h3 class="font-bold text-2xl text-red-500">Sabritas a tu Gusto</h3><p class="mt-2 text-gray-600">Elige tus papitas favoritas (Cheetos, Fritos, etc.) y las preparamos con limón, salsas, chamoy y todos los toppings que se te antojen.</p></div></div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="400"><img src="https://placehold.co/600x400/EC4899/FFFFFF?text=Gomitas+Enchiladas" alt="Imagen de Gomitas Enchiladas" class="w-full h-56 object-cover"><div class="p-6"><h3 class="font-bold text-2xl text-pink-500">Gomitas Enchiladas</h3><p class="mt-2 text-gray-600">Una dulce y picosita mezcla de tus gomitas favoritas cubiertas en nuestro chamoy especial y chile en polvo. ¡Adictivas!</p></div></div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="500"><img src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Fruta+con+Chile" alt="Imagen de Fruta con Chile" class="w-full h-56 object-cover"><div class="p-6"><h3 class="font-bold text-2xl text-purple-500">Fruta Fresca</h3><p class="mt-2 text-gray-600">La opción refrescante. Mango, jícama, pepino y sandía de temporada con limón, sal y mucho chile del que pica (o del que no pica).</p></div></div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Producto 2: Tostilocos -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://placehold.co/600x400/22C55E/FFFFFF?text=Tostilocos" alt="Imagen de Tostilocos" class="w-full h-56 object-cover">
+    <!-- Offers Section -->
+    <section id="ofertas" class="py-20 bg-red-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-red-600 font-lobster">¡Ofertas Especiales!</h2>
+                <p class="text-lg text-gray-600 mt-2">Aprovecha nuestras promos por tiempo limitado.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Oferta 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover relative" data-aos="fade-up">
+                    <div class="offer-badge">¡PROMO!</div>
+                    <img src="https://placehold.co/600x400/F59E0B/FFFFFF?text=Combo+Amigos" alt="Imagen de Combo Amigos" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <h3 class="font-bold text-2xl text-green-600">Tostilocos</h3>
-                        <p class="mt-2 text-gray-600">Tus Tostitos favoritos con elote, queso, crema, y un toque de chile en polvo. ¡Cremosos, crujientes y deliciosos!</p>
+                        <h3 class="font-bold text-2xl text-amber-500">Combo Amigos</h3>
+                        <p class="mt-2 text-gray-600">¡Llévate 2 Dorilocos y 2 refrescos por un precio especial! Ideal para compartir... o no.</p>
                     </div>
                 </div>
-
-                <!-- Producto 3: Duritos Preparados -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://placehold.co/600x400/F97316/FFFFFF?text=Duritos+Preparados" alt="Imagen de Duritos Preparados" class="w-full h-56 object-cover">
+                <!-- Oferta 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="offer-badge">¡MARTES!</div>
+                    <img src="https://placehold.co/600x400/10B981/FFFFFF?text=Martes+Locos" alt="Imagen de Martes Locos" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <h3 class="font-bold text-2xl text-orange-500">Duritos con Todo</h3>
-                        <p class="mt-2 text-gray-600">Crujientes duritos de harina con col, jitomate, cueritos, aguacate, crema y tu salsa picante preferida. ¡La botana perfecta!</p>
+                        <h3 class="font-bold text-2xl text-emerald-500">Martes Locos</h3>
+                        <p class="mt-2 text-gray-600">Todos los martes, tus Tostilocos o Duritos preparados al 2x1. ¡No te lo puedes perder!</p>
                     </div>
                 </div>
-
-                <!-- Producto 4: Sabritas Preparadas -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://placehold.co/600x400/EF4444/FFFFFF?text=Sabritas+Preparadas" alt="Imagen de Sabritas Preparadas" class="w-full h-56 object-cover">
+                <!-- Oferta 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="offer-badge">¡GRATIS!</div>
+                    <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=Agua+Gratis" alt="Imagen de Agua Fresca Gratis" class="w-full h-56 object-cover">
                     <div class="p-6">
-                        <h3 class="font-bold text-2xl text-red-500">Sabritas a tu Gusto</h3>
-                        <p class="mt-2 text-gray-600">Elige tus papitas favoritas (Cheetos, Fritos, etc.) y las preparamos con limón, salsas, chamoy y todos los toppings que se te antojen.</p>
-                    </div>
-                </div>
-                
-                <!-- Producto 5: Gomitas Enchiladas -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://placehold.co/600x400/EC4899/FFFFFF?text=Gomitas+Enchiladas" alt="Imagen de Gomitas Enchiladas" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-2xl text-pink-500">Gomitas Enchiladas</h3>
-                        <p class="mt-2 text-gray-600">Una dulce y picosita mezcla de tus gomitas favoritas cubiertas en nuestro chamoy especial y chile en polvo. ¡Adictivas!</p>
-                    </div>
-                </div>
-
-                <!-- Producto 6: Fruta con Chile -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 card-hover" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Fruta+con+Chile" alt="Imagen de Fruta con Chile" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-bold text-2xl text-purple-500">Fruta Fresca</h3>
-                        <p class="mt-2 text-gray-600">La opción refrescante. Mango, jícama, pepino y sandía de temporada con limón, sal y mucho chile del que pica (o del que no pica).</p>
+                        <h3 class="font-bold text-2xl text-indigo-500">Postre Gratis</h3>
+                        <p class="mt-2 text-gray-600">En la compra de $150 o más, llévate unas gomitas enchiladas o un agua fresca ¡totalmente gratis!</p>
                     </div>
                 </div>
             </div>
@@ -176,14 +188,14 @@
     <section id="contacto" class="py-20 bg-gray-800 text-white">
         <div class="container mx-auto px-6 text-center" data-aos="zoom-in">
             <h2 class="text-4xl md:text-5xl font-bold font-lobster text-yellow-400">¡Haz tu Pedido!</h2>
-            <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Encuéntranos en nuestra sucursal o síguenos en redes sociales para no perderte ninguna de nuestras creaciones.</p>
+            <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Encuéntranos en nuestra sucursal o llámanos para hacer tu pedido. ¡Síguenos en redes sociales!</p>
             
             <div class="mt-10">
                 <p class="text-xl font-bold">Dirección:</p>
                 <p class="text-lg text-gray-300">Calle del Antojo #123, Colonia Sabrosa, Tu Ciudad</p>
                 
                 <p class="text-xl font-bold mt-6">Teléfono / WhatsApp:</p>
-                <p class="text-lg text-gray-300">55 1234 5678</p>
+                <p class="text-2xl font-bold text-yellow-300 tracking-wider">327 105 5666</p>
 
                 <div class="mt-8 flex justify-center space-x-6">
                     <a href="#" class="text-yellow-400 hover:text-white transition duration-300">
@@ -213,12 +225,44 @@
             once: true, // La animación ocurre solo una vez
         });
 
-        // Lógica para el menú móvil
+        // --- Lógica para el menú móvil y scroll suave ---
+
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const header = document.querySelector('header');
+        const navLinks = document.querySelectorAll('nav a[href^="#"], #mobile-menu a[href^="#"]');
 
+        // Abrir/Cerrar menú móvil
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Función para el scroll suave que considera la altura del header
+        const smoothScrollTo = (e) => {
+            e.preventDefault();
+            const targetId = e.currentTarget.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const headerHeight = header.offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Ocultar el menú móvil después de hacer clic (si está abierto)
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        };
+
+        // Asignar el evento a todos los links de navegación
+        navLinks.forEach(link => {
+            link.addEventListener('click', smoothScrollTo);
         });
     </script>
 
